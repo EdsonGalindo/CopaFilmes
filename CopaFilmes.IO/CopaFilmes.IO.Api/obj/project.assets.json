@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site.csproj",
-      "projectName": "CopaFilmes.IO.Site",
-      "projectPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site.csproj",
+      "projectUniqueName": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO.Api\\CopaFilmes.IO.Api.csproj",
+      "projectName": "CopaFilmes.IO.Api",
+      "projectPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO.Api\\CopaFilmes.IO.Api.csproj",
       "packagesPath": "C:\\Users\\edcg\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\obj\\",
+      "outputPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

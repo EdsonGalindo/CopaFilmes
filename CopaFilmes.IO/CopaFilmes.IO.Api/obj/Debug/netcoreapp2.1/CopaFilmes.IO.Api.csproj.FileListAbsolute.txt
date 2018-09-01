@@ -1,0 +1,13 @@
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.deps.json
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.runtimeconfig.json
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.runtimeconfig.dev.json
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.dll
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.csproj.CoreCompileInputs.cache
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.RazorAssemblyInfo.cache
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.RazorAssemblyInfo.cs
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.AssemblyInfoInputs.cache
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.AssemblyInfo.cs
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.RazorTargetAssemblyInfo.cache
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.pdb
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.dll
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.pdb
