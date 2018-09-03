@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Pre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{7D9503BC-8633-4F72-8281-91AC7DCCC468}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.IO.Api", "CopaFilmes.IO.Api\CopaFilmes.IO.Api.csproj", "{EA38CC52-BF41-451D-9DC2-E782AA0AC347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaFilmes.IO.Api", "CopaFilmes.IO.Api\CopaFilmes.IO.Api.csproj", "{EA38CC52-BF41-451D-9DC2-E782AA0AC347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.IO.Api.Testes", "CopaFilmes.IO.Api.Testes\CopaFilmes.IO.Api.Testes.csproj", "{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{EA38CC52-BF41-451D-9DC2-E782AA0AC347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA38CC52-BF41-451D-9DC2-E782AA0AC347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA38CC52-BF41-451D-9DC2-E782AA0AC347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{186682E8-C557-4BC7-8541-31B0D8CE4BE4} = {F3113C29-B2C6-49DA-9BF4-CC76862830BC}
 		{EA38CC52-BF41-451D-9DC2-E782AA0AC347} = {7D9503BC-8633-4F72-8281-91AC7DCCC468}
+		{B2830D97-4E03-4E93-8F9F-79B7ED7D6DB5} = {7D9503BC-8633-4F72-8281-91AC7DCCC468}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC37B935-D1F7-4A99-A816-4B40092690D1}

@@ -11,3 +11,4 @@ C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netco
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\bin\Debug\netcoreapp2.1\CopaFilmes.IO.Api.pdb
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.dll
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.pdb
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO.Api\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Api.csprojAssemblyReference.cache

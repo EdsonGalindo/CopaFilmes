@@ -10,39 +10,60 @@ using System.Threading.Tasks;
 
 namespace CopaFilmes.IO.Api.DAO
 {
-    public class FilmesDAO
+    public sealed class FilmesDAO
     {
         private List<Filme> Filmes { get; set; }
-        private readonly string urlApiFilmes = @"http://copafilmes.azurewebsites.net/api/filmes";
+        static readonly String endPointApiFilmes = "http://copafilmes.azurewebsites.net/";
+        static readonly String rotaApiFilmes = "api/filmes";
+        public Task InicializacaoAssinc { get; private set; }
 
         public List<Filme> ListarFilmes()
         {
             return Filmes;
         }
 
-        public FilmesDAO()
+        public Filme ObterFilmePorId(string Id)
         {
-            Filmes = ObterFilmes();
+            return Filmes.Where(f => f.Id == Id).FirstOrDefault();
         }
 
-        private List<Filme> ObterFilmes()
+        public List<Filme> ObterFilmesPorId(string[] Id)
+        {
+            return Filmes.Where(f => Id.Contains(f.Id)).ToList();
+        }
+
+        public FilmesDAO()
+        {
+            Task.Run(() => InicializarBuscaFilmesAssinc()).Wait();
+        }
+
+        private async Task InicializarBuscaFilmesAssinc()
+        {
+            Filmes = await Task.Run(() => ObterDadosFilmes());
+        }
+
+        private static async Task<List<Filme>> ObterDadosFilmes()
         {
             List<Filme> retorno = new List<Filme>();
 
             using (var clienteHttp = new HttpClient())
             {
+                clienteHttp.BaseAddress = new Uri(endPointApiFilmes);
+                clienteHttp.DefaultRequestHeaders.Clear();
                 clienteHttp.DefaultRequestHeaders.Accept
                     .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var resultado = clienteHttp.GetAsync(urlApiFilmes).Result;
+                await Task.Delay(100);
 
-                if (resultado.StatusCode != HttpStatusCode.OK)
+                HttpResponseMessage acessoApi = await clienteHttp.GetAsync(rotaApiFilmes);
+                if (!acessoApi.IsSuccessStatusCode)
                     return retorno;
 
-                if (resultado.Content.ToString().Length == 0)
+                var conteudoRetorno = await acessoApi.Content.ReadAsStringAsync();
+                if (conteudoRetorno.Length == 0)
                     return retorno;
 
-                retorno = JsonConvert.DeserializeObject<List<Filme>>(resultado.Content.ToString()).ToList();
+                retorno = JsonConvert.DeserializeObject<List<Filme>>(conteudoRetorno);
             }
 
             return retorno;
