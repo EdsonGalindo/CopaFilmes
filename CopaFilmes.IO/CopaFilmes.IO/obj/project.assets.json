@@ -12224,9 +12224,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site2.csproj",
-      "projectName": "CopaFilmes.IO.Site2",
-      "projectPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site2.csproj",
+      "projectUniqueName": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site.csproj",
+      "projectName": "CopaFilmes.IO.Site",
+      "projectPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\CopaFilmes.IO.Site.csproj",
       "packagesPath": "C:\\Users\\edcg\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\Git\\Repos\\CopaFilmes\\CopaFilmes.IO\\CopaFilmes.IO\\obj\\",
       "projectStyle": "PackageReference",

@@ -31,3 +31,5 @@ C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreap
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Site.pdb
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreapp2.1\CopaFilmes.IO.Site.csproj.CopyComplete
 C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreapp2.1\Razor\Views\CopaFilmes\Index.g.cshtml.cs
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreapp2.1\Razor\Views\CopaFilmes\_SelecaoFilmes.g.cshtml.cs
+C:\Projetos\Git\Repos\CopaFilmes\CopaFilmes.IO\CopaFilmes.IO\obj\Debug\netcoreapp2.1\Razor\Views\CopaFilmes\_ResultadoFinal.g.cshtml.cs
