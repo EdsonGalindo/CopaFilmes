@@ -26,6 +26,8 @@ namespace CopaFilmes.IO.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors(options =>
+            options.AddPolicy("PermiteAcessoSites", builder => builder.WithOrigins("https://localhost:44350", "http://copafilmes.azurewebsites.net")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +44,7 @@ namespace CopaFilmes.IO.Api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCors("PermiteAcessoSites");
         }
     }
 }

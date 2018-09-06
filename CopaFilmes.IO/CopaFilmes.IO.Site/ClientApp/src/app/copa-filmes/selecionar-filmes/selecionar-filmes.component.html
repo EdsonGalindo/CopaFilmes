@@ -1,0 +1,29 @@
+<div class="table-active col-md-12 mt-3 rounded">
+  <div class="w-10 p-3"></div>
+
+  <div style="height: 180px;" class="col-sm-10 col-sm-offset-1 w-100 p-3 mb-2 bg-secondary text-white rounded">
+
+    <div class="p-5">
+      <p class="text-center">Copa do mundo de Filmes</p>
+
+      <h1 class="text-center">Fase de Seleção</h1>
+
+      <p class="text-md-center">Selecione os 8 filmes participantes do campeonato e clique em Gerar Meu Campeonato para prosseguir</p>
+    </div>
+  </div>
+
+  <p *ngIf="!filmes"><em>Loading...</em></p>
+
+  <div class="col-sm-9 col-sm-offset-2 w-100 p-3" *ngIf="filmes">
+    <div class="col-sm-5 table-light m-2 p-0" *ngFor="let filme of filmes">
+      <div class="mt-4 col-sm-1 float-left align-middle">
+        <input type="checkbox" name="filmescopa" />
+      </div>
+      <div class="col-sm-10 float-right">
+        <p class="text-left font-weight-bold">{{ filme.titulo }}</p>
+        <p>{{ filme.ano }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
