@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SelecionarFilmesComponent } from './copa-filmes/selecionar-filmes/selecionar-filmes.component';
+import { ResultadoFinalComponent } from './copa-filmes/resultado-final/resultado-final.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SelecionarFilmesComponent } from './copa-filmes/selecionar-filmes/selec
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SelecionarFilmesComponent
+    SelecionarFilmesComponent,
+    ResultadoFinalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +31,7 @@ import { SelecionarFilmesComponent } from './copa-filmes/selecionar-filmes/selec
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'selecionar-filmes', component: SelecionarFilmesComponent },
+      { path: 'resultado-final', component: ResultadoFinalComponent },
     ])
   ],
   providers: [],

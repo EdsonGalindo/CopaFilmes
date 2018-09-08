@@ -25,6 +25,25 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\dataservice.ts" />
+    <None Remove="ClientApp\src\filme.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\dataservice.ts" />
+    <TypeScriptCompile Include="ClientApp\src\filme.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\src\dataservice.js">
+      <DependentUpon>dataservice.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\dataservice.js.map">
+      <DependentUpon>dataservice.js</DependentUpon>
+    </None>
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

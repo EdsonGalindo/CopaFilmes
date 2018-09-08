@@ -1,29 +1,40 @@
-<div class="table-active col-md-12 mt-3 rounded">
-  <div class="w-10 p-3"></div>
+<div class="row align-items-center justify-content-center table-secondary col-md-12 mt-3 mb-3 rounded">
 
-  <div style="height: 180px;" class="col-sm-10 col-sm-offset-1 w-100 p-3 mb-2 bg-secondary text-white rounded">
-
+  <div style="height: 180px;" class="col-sm-10 w-100 p-3 mt-3 mb-2 bg-secondary text-white rounded">
     <div class="p-5">
-      <p class="text-center">Copa do mundo de Filmes</p>
-
+      <h4 class="text-center">Copa do mundo de Filmes</h4>
       <h1 class="text-center">Fase de Seleção</h1>
-
-      <p class="text-md-center">Selecione os 8 filmes participantes do campeonato e clique em Gerar Meu Campeonato para prosseguir</p>
+      <h5 class="text-sm-center">Selecione os 8 filmes participantes do campeonato e clique em Gerar Meu Campeonato para prosseguir</h5>
     </div>
   </div>
 
-  <p *ngIf="!filmes"><em>Loading...</em></p>
-
-  <div class="col-sm-9 col-sm-offset-2 w-100 p-3" *ngIf="filmes">
-    <div class="col-sm-5 table-light m-2 p-0" *ngFor="let filme of filmes">
-      <div class="mt-4 col-sm-1 float-left align-middle">
-        <input type="checkbox" name="filmescopa" />
-      </div>
-      <div class="col-sm-10 float-right">
-        <p class="text-left font-weight-bold">{{ filme.titulo }}</p>
-        <p>{{ filme.ano }}</p>
-      </div>
+  <div *ngIf="!filmes" class="row align-items-center justify-content-center col-sm-10 w-100">
+    <div class="row justify-content-center col-3 m-2 text-black">
+      <p><em>Carregando filmes...</em></p>
     </div>
   </div>
+
+  <div *ngIf="filmes" class="col-sm-10 w-100">
+    <div class="float-left col-sm-4 m-2 text-white font-weight-bold">
+      <div class="col-sm-12">
+        <div class="col-sm-12">Selecionados</div>
+        <div class="col-sm-12">{{counter}} de 8 filmes</div>
+      </div>
+    </div>
+    <div class="float-right col-sm-offset-4 col-sm-4 m-2">
+      <button type="button" class="float-right btn btn-primary">GERAR MEU CAMPEONATO</button>
+    </div>
+  </div>
+
+  <div class="cardFilms col-sm-4 table-light m-2 p-3" *ngFor="let filme of filmes">
+    <div class="mt-4 col-sm-1 float-left align-middle">
+      <input type="checkbox" name="selecionado" (change)="checkedState($event, checkBox)" />
+    </div>
+    <div class="col-sm-10 float-right">
+      <p class="text-left font-weight-bold">{{ filme.titulo }}</p>
+      <p>{{ filme.ano }}</p>
+    </div>
+  </div>
+  <div class="row col-sm-10 w-100 mb-2"></div>
 
 </div>

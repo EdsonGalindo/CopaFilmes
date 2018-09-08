@@ -1,23 +1,51 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, OnDestroy, Inject, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Filme, FilmeId } from '../../../filme';
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataService } from '../../../dataservice';
+import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 
 @Component({
   selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  templateUrl: './resultado-final.component.html',
+  styleUrls: ['../../app.component.css'],
+  providers: [DataService]
 })
-export class FetchDataComponent {
-  public forecasts: WeatherForecast[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-      this.forecasts = result;
+export class ResultadoFinalComponent implements OnInit, OnDestroy {
+  public filmes: Filme[];
+  public filmesId: FilmeId[];
+
+  constructor(public httpClient: HttpClient, public dataservice: DataService, @Inject('BASE_URL_API') public baseUrl: string) {
+    let url = this.baseUrl + 'api/CopaFilmes/filmes-selecionados';
+    let params = { 'FilmesCopaID' : '1' };//JSON.parse(JSON.stringify(this.filmesId));
+
+    httpClient.get<Filme[]>(url, { params: params }).subscribe(result => {
+      this.filmes = result;
     }, error => console.error(error));
   }
+
+  public obterResultadoCopa() {
+    let url = this.baseUrl + 'api/CopaFilmes/filmes-selecionados';
+    let params = JSON.parse(JSON.stringify(this.filmesId));
+
+    this.httpClient.get<Filme[]>(url, { params: params }).subscribe(result => {
+      this.filmes = result;
+    }, error => console.error(error));
+  }
+
+  ngOnInit() {
+    this.filmesId = this.dataservice.filmesId;
+  }
+
+  ngOnDestroy() {
+  }
+
 }
 
-interface WeatherForecast {
-  dateFormatted: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+//interface Filme {
+//  id: string;
+//  titulo: string;
+//  ano: number;
+//  nota: number;
+//}
