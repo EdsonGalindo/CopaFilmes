@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SelecionarFilmesComponent } from './copa-filmes/selecionar-filmes/selecionar-filmes.component';
 import { ResultadoFinalComponent } from './copa-filmes/resultado-final/resultado-final.component';
+import { DataService } from '../dataservice';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ResultadoFinalComponent } from './copa-filmes/resultado-final/resultado
       { path: 'resultado-final', component: ResultadoFinalComponent },
     ])
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

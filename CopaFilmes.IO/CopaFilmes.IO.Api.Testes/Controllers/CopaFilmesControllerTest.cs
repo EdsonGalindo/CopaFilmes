@@ -28,7 +28,7 @@ namespace CopaFilmes.IO.Api.Testes.Controllers
         public void RealizarPartidasCopa()
         {
             var Dao = new FilmesDAO();
-            var filmesEscolhidos = Dao.ListarFilmes().Take(8).Select(f => f.Id).ToArray<string>();
+            var filmesEscolhidos = string.Join(", ", (Dao.ListarFilmes().Take(8).Select(f => f.Id).ToArray<string>()));
             CopaFilmesController controller = new CopaFilmesController();
 
             JsonResult result = controller.RealizarPartidasCopa(filmesEscolhidos) as JsonResult;

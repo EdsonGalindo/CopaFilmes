@@ -1,11 +1,11 @@
 export class Filme {
-  id: string;
-  titulo: string;
-  ano: number;
-  nota: number;
-  selecionado: boolean;
+  public id: string;
+  public titulo: string;
+  public ano: number;
+  public nota: number;
+  public selecionado: boolean;
 }
 
-export class FilmeId {
-  id: string;
+export class FilmesCopaID {
+  public id: string;
 }

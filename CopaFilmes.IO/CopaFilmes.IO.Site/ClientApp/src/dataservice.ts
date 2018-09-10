@@ -1,6 +1,9 @@
-import { Filme, FilmeId } from './filme';
+import { Injectable } from '@angular/core';
+import { Filme, FilmesCopaID } from './filme';
+
+@Injectable()
 
 export class DataService {
-  public filmes: Filme[];
-  public filmesId: FilmeId[];
+  public filmes: Filme[] = [];
+  public filmesCopaID: FilmesCopaID[] = [];
 }

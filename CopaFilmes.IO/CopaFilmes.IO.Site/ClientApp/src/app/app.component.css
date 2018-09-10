@@ -3,6 +3,10 @@
   min-width: 330px;
 }
 
+.cardFilmsNumero{
+  height: 80px;
+}
+
 h1 {
   font-size: 24pt;
 }

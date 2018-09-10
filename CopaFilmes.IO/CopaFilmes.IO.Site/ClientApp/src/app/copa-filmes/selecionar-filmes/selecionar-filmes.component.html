@@ -18,17 +18,17 @@
     <div class="float-left col-sm-4 m-2 text-white font-weight-bold">
       <div class="col-sm-12">
         <div class="col-sm-12">Selecionados</div>
-        <div class="col-sm-12">{{counter}} de 8 filmes</div>
+        <div class="col-sm-12">{{contador}} de 8 filmes</div>
       </div>
     </div>
     <div class="float-right col-sm-offset-4 col-sm-4 m-2">
-      <button type="button" class="float-right btn btn-primary">GERAR MEU CAMPEONATO</button>
+      <button [disabled]="bloqBtnGerar" (click)="chamaResultadoFinal()" type="button" class="float-right btn btn-primary">GERAR MEU CAMPEONATO</button>
     </div>
   </div>
 
   <div class="cardFilms col-sm-4 table-light m-2 p-3" *ngFor="let filme of filmes">
     <div class="mt-4 col-sm-1 float-left align-middle">
-      <input type="checkbox" name="selecionado" (change)="checkedState($event, checkBox)" />
+      <input type="checkbox" (change)="checkedState($event, filme)" />
     </div>
     <div class="col-sm-10 float-right">
       <p class="text-left font-weight-bold">{{ filme.titulo }}</p>

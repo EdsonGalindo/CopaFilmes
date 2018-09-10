@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CopaFilmes.IO.Api.Business;
 using Microsoft.AspNetCore.Cors;
+using Newtonsoft.Json;
 
 namespace CopaFilmes.IO.Api.Controllers
 {
@@ -14,7 +15,12 @@ namespace CopaFilmes.IO.Api.Controllers
     [ApiController]
     public class CopaFilmesController : ControllerBase
     {
-        FilmesDAO DadosFilmes = new FilmesDAO();
+        FilmesDAO DadosFilmes;
+
+        public CopaFilmesController()
+        {
+            DadosFilmes = new FilmesDAO();
+        }
 
         [Route("")]
         [Route("filmes-disponiveis")]
@@ -29,8 +35,10 @@ namespace CopaFilmes.IO.Api.Controllers
         [Route("filmes-selecionados")]
         [HttpGet]
         [EnableCors("PermiteAcessoSites")]
-        public JsonResult RealizarPartidasCopa(string[] FilmesCopaID)
+        public JsonResult RealizarPartidasCopa(string FilmesCopa)
         {
+            string[] FilmesCopaID = FilmesCopa.Split(", ");
+
             CopaFilmesBusiness CopaFilmes = new CopaFilmesBusiness(FilmesCopaID);
             var resultadoFinal = CopaFilmes.IniciarCopa();
 

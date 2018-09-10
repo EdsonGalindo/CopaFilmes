@@ -1,41 +1,53 @@
 import { Component, OnInit, OnDestroy, Inject, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Filme, FilmeId } from '../../../filme';
+import { Router } from '@angular/router';
+import { Filme, FilmesCopaID } from '../../../filme';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 import { DataService } from '../../../dataservice';
-import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 
 @Component({
-  selector: 'app-fetch-data',
+  selector: 'app-resultado-final',
   templateUrl: './resultado-final.component.html',
-  styleUrls: ['../../app.component.css'],
-  providers: [DataService]
+  styleUrls: ['../../app.component.css']
 })
 
 export class ResultadoFinalComponent implements OnInit, OnDestroy {
   public filmes: Filme[];
-  public filmesId: FilmeId[];
+  private filmesCopaID: FilmesCopaID[] = [];
+  private idFilmes: String = '';
+  public filmeCampeao: Filme;
+  public filmeViceCampeao: Filme;
 
-  constructor(public httpClient: HttpClient, public dataservice: DataService, @Inject('BASE_URL_API') public baseUrl: string) {
-    let url = this.baseUrl + 'api/CopaFilmes/filmes-selecionados';
-    let params = { 'FilmesCopaID' : '1' };//JSON.parse(JSON.stringify(this.filmesId));
+  constructor(private router: Router, public httpClient: HttpClient, private dataservice: DataService, @Inject('BASE_URL_API') public baseUrl: string) {
 
-    httpClient.get<Filme[]>(url, { params: params }).subscribe(result => {
-      this.filmes = result;
-    }, error => console.error(error));
   }
 
-  public obterResultadoCopa() {
-    let url = this.baseUrl + 'api/CopaFilmes/filmes-selecionados';
-    let params = JSON.parse(JSON.stringify(this.filmesId));
+  chamarSelecaoFilmes() {
+    this.router.navigate(['selecionar-filmes']);
+  }
 
-    this.httpClient.get<Filme[]>(url, { params: params }).subscribe(result => {
+  private obterResultadoCopa() {
+    let url = this.baseUrl + 'api/CopaFilmes/filmes-selecionados';
+
+    for (var prop of this.filmesCopaID) {
+      this.idFilmes += (this.idFilmes.length > 1 ? ', ' : '') + prop.id;
+    }
+    
+    console.log(this.idFilmes.toString());
+
+    this.httpClient.get<Filme[]>(url + '?FilmesCopa=' + this.idFilmes).subscribe(result => {
       this.filmes = result;
+      if (this.filmes.length > 1) {
+        this.filmeCampeao = result[0];
+        this.filmeViceCampeao = result[1];
+      }
     }, error => console.error(error));
+
   }
 
   ngOnInit() {
-    this.filmesId = this.dataservice.filmesId;
+    this.filmesCopaID = this.dataservice.filmesCopaID;
+    console.log(this.filmesCopaID.length);
+    this.obterResultadoCopa();
   }
 
   ngOnDestroy() {

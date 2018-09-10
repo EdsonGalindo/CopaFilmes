@@ -6,10 +6,10 @@ var Filme = /** @class */ (function () {
     return Filme;
 }());
 exports.Filme = Filme;
-var FilmeId = /** @class */ (function () {
-    function FilmeId() {
+var FilmesCopaID = /** @class */ (function () {
+    function FilmesCopaID() {
     }
-    return FilmeId;
+    return FilmesCopaID;
 }());
-exports.FilmeId = FilmeId;
+exports.FilmesCopaID = FilmesCopaID;
 //# sourceMappingURL=filme.js.map
